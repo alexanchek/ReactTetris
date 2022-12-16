@@ -14,7 +14,7 @@
     "context": true,
     "expect": true,
     "jsdom": true,
-    "JSX": true,
+    "JSX": true
 },
   "extends": [
     "plugin:@typescript-eslint/recommended",
@@ -52,7 +52,9 @@
       "version": "detect"
     },
     "import/resolver": {
-      "typescript": {}
+      "typescript": {},
+      "moduleDirectory": ["src", "node_modules"],
+      "caseSensitive": false
     }
   }
 }
