@@ -18,7 +18,7 @@ const Stage: FC<IStageProps> = ({ stage }) => {
           return (
             row.map((cell, x) => {
               return (
-                <Cell key={x} type={'L'} />
+                <Cell key={x} type={cell.type} />
               )
             })
           )

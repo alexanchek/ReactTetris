@@ -1,6 +1,6 @@
 import { TETROMINOS } from "@utils/tetrominos";
 
 export type IStage = {
-  value: keyof typeof TETROMINOS;
+  type: keyof typeof TETROMINOS;
   state: 'clear';
 }
