@@ -34,7 +34,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "import/no-unresolved": [
-      2, 
+      0, 
       { "caseSensitive": false }
    ],
     "no-undef": [2],
@@ -45,16 +45,20 @@
     "react/react-in-jsx-scope": "off",
     "semi-style": ["error", "last"],
     "@typescript-eslint/ban-ts-comment": [0],
-    "@typescript-eslint/no-non-null-assertion": [0]
+    "@typescript-eslint/no-non-null-assertion": [0],
   },
   "settings": {
     "react": {
       "version": "detect"
     },
     "import/resolver": {
-      "typescript": {},
-      "moduleDirectory": ["src", "node_modules"],
-      "caseSensitive": false
-    }
+      "node": {
+        "paths": "packages/*/src",
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+      },
+      "typescript": {}
+    },
+    "moduleDirectory": ["src", "node_modules"],
+    "caseSensitive": false
   }
 }

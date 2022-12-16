@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { CSSProperties, FC, useState, KeyboardEvent } from 'react';
 
 import bgImage from '@assets/bg.png';
