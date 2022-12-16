@@ -7,12 +7,15 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "eslint:fix": "npx eslint --fix \"src/**/*.{ts,js,tsx,jsx}\"",
+    "eslint:tsc": "npx vue-tsc --noEmit --skipLibCheck && npx eslint --fix \"src/**/*.{ts,js,tsx,jsx}\""
   },
   "dependencies": {
     "@types/node": "^18.11.15",
     "eslint-plugin-prettier": "^4.2.1",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "10.0.8",
+    "prettier": "^2.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.56.2"
