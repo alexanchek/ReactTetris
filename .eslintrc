@@ -1,0 +1,58 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "globals": {
+    "React": true,
+    "google": true,
+    "mount": true,
+    "mountWithRouter": true,
+    "shallow": true,
+    "shallowWithRouter": true,
+    "context": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true,
+},
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/typescript",
+    "plugin:import/warnings"
+
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "import/no-unresolved": [
+      2, 
+      { "caseSensitive": false }
+   ],
+    "no-undef": [2],
+    "no-empty": [1],
+    "no-empty-function": [1],   
+    "react/jsx-uses-vars": "error" ,
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "semi-style": ["error", "last"],
+    "@typescript-eslint/ban-ts-comment": [0],
+    "@typescript-eslint/no-non-null-assertion": [0]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
