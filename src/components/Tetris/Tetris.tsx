@@ -21,7 +21,7 @@ const Tetris: FC<ITetrisProps> = () => {
   const [gameOver, setGameOver] = useState(false);
 
   const { player, updatePlayerPos, resetPlayer } = usePlayer();
-  const { stage, setStage } = useStage();
+  const { stage, setStage } = useStage({player});
 
   console.log('re-render')
 
@@ -89,7 +89,7 @@ const Tetris: FC<ITetrisProps> = () => {
                 <Display text="Level" />
               </div>
             )}
-          <StartButton onClick={startGame} />
+          <StartButton callback={startGame} />
         </aside>
       </div>
     </div>
