@@ -1,4 +1,4 @@
 export interface IDisplayProps {
-  gameOver: any;
+  gameOver: boolean;
   text: string;
 }

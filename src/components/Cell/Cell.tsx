@@ -16,8 +16,7 @@ const Cell: FC<ICellProps> = ({ type }) => {
   }
 
   return (
-    <div style={style}>
-    </div>
+    <div style={style} />
   );
 };
 
