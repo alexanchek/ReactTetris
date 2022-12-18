@@ -1,7 +1,11 @@
+// React
 import { useCallback, useState } from 'react';
 
+// Utils
 import { randomTetromino, TETROMINOS } from '@utils/tetrominos';
 import { checkCollision, STAGE_WIDTH } from '@utils/gameHelpers';
+
+// Interfaces
 import { IPlayer } from '@interfaces/Player.interface';
 import { IStage } from '@interfaces/Stage.interface';
 import { IShapeTetromino } from '@interfaces/Tetromino.interface';

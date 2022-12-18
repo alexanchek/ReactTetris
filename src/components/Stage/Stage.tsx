@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from 'react';
+import { CSSProperties, FC, useEffect } from 'react';
 import { Cell } from '../Cell';
 import { IStageProps } from './Stage.interface';
 import moduleStyles from './Stage.module.scss';
@@ -6,6 +6,10 @@ import moduleStyles from './Stage.module.scss';
 const Stage: FC<IStageProps> = ({ stage }) => {
   const width = stage[0].length;
   const height = stage.length;
+
+  useEffect(() => {
+    console.log('actual length', stage[0].length);
+  }, [stage]);
 
   const stageStyle: CSSProperties = {
     gridTemplateRows: `repeat(${height}, calc(25vw/${width}))`,
