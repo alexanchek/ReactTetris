@@ -11,6 +11,7 @@ export default defineConfig({
       { find: '@components', replacement: path.resolve(__dirname, "src/components") },
       { find: '@configs', replacement: path.resolve(__dirname, "src/configs") },
       { find: '@definitions', replacement: path.resolve(__dirname, "src/configs/projectsDefinitions") },
+      { find: '@interfaces', replacement: path.resolve(__dirname, "src/interfaces") },
       { find: '@envs', replacement: path.resolve(__dirname, "src/envs") },
       { find: '@hooks', replacement: path.resolve(__dirname, "src/hooks") },
       { find: '@layouts', replacement: path.resolve(__dirname, "src/layouts") },

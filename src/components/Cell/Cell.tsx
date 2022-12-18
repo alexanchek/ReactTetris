@@ -3,7 +3,7 @@ import { ICellProps } from './Cell.interface';
 import { TETROMINOS } from '@utils/tetrominos';
 
 const Cell: FC<ICellProps> = ({ type }) => {
-  const color = TETROMINOS[type].color;
+  const color = TETROMINOS[type as keyof typeof TETROMINOS].color;
 
   const style: CSSProperties = {
     width: 'auto',
@@ -13,11 +13,9 @@ const Cell: FC<ICellProps> = ({ type }) => {
     borderRightColor: `rgba(${color}, 1)`,
     borderTopColor: `rgba(${color}, 1)`,
     borderLeftColor: `rgba(${color},  0.3)`,
-  }
+  };
 
-  return (
-    <div style={style} />
-  );
+  return <div style={style} />;
 };
 
 export default Cell;

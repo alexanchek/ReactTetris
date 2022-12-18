@@ -1,6 +1,6 @@
-import { TETROMINOS } from "@utils/tetrominos";
+import { ITetromino } from './Tetromino.interface';
 
 export type IStage = {
-  type: keyof typeof TETROMINOS | string | number;
+  type: ITetromino | string | number;
   state: 'clear' | 'merged';
-}
+};

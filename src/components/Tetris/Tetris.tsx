@@ -76,7 +76,8 @@ const Tetris: FC<ITetrisProps> = () => {
             <Display gameOver={gameOver} text='Game Over' />
           ) : (
             <div>
-              <Display text='Score' /> <Display text='Rows' /> <Display text='Level' />
+              <Display text='Score' />
+              <Display text='Rows' /> <Display text='Level' />
             </div>
           )}
           <StartButton callback={startGame} />

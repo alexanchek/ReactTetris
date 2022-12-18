@@ -32,6 +32,7 @@
       "@styles/*": ["styles/*"],
       "@UI/*": ["components/UI/*"],
       "@utils/*": ["utils/*"],
+      "@interfaces/*": ["interfaces/*"],
     },
   },
   "include": ["src"],

@@ -9,12 +9,13 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "eslint:fix": "npx eslint --fix \"src/**/*.{ts,js,tsx,jsx}\"",
-    "eslint:tsc": "npx vue-tsc --noEmit --skipLibCheck && npx eslint --fix \"src/**/*.{ts,js,tsx,jsx}\""
+    "eslint:tsc": "npx tsc && npx eslint --fix \"src/**/*.{ts,js,tsx,jsx}\""
   },
   "dependencies": {
     "@types/node": "18.11.15",
     "@typescript-eslint/eslint-plugin": "5.46.1",
     "eslint": "8.29.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-prettier": "4.2.1",
     "lint-staged": "10.0.8",
     "prettier": "2.8.1",

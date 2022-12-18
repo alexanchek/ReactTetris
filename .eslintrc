@@ -45,7 +45,7 @@
     "react/react-in-jsx-scope": "off",
     "semi-style": ["error", "last"],
     "@typescript-eslint/ban-ts-comment": [0],
-    "@typescript-eslint/no-non-null-assertion": [0],
+    "@typescript-eslint/no-non-null-assertion": [0]
   },
   "settings": {
     "react": {
