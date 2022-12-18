@@ -1,2 +1,2 @@
-import Cell from "./Cell";
-export {Cell};
+import Cell from './Cell';
+export { Cell };

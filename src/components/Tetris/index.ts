@@ -1,3 +1,3 @@
-import Tetris from "./Tetris";
+import Tetris from './Tetris';
 
-export {Tetris};
+export { Tetris };

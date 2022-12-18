@@ -1,9 +1,8 @@
-import { Tetris } from "./components/Tetris";
-
+import { Tetris } from './components/Tetris';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className='App'>
       <Tetris />
     </div>
   );

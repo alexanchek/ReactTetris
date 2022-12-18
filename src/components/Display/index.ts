@@ -1,2 +1,2 @@
-import Display from "./Display";
-export {Display};
+import Display from './Display';
+export { Display };

@@ -10,20 +10,16 @@ const Stage: FC<IStageProps> = ({ stage }) => {
   const stageStyle: CSSProperties = {
     gridTemplateRows: `repeat(${height}, calc(25vw/${width}))`,
     gridTemplateColumns: `repeat(${width}, 1fr)`,
-  }
+  };
 
   return (
-      <div style={stageStyle} className={moduleStyles.stage}>
-        {stage.map(row => {
-          return (
-            row.map((cell, x) => {
-              return (
-                <Cell key={x} type={cell.type} />
-              )
-            })
-          )
-        })}
-      </div>
+    <div style={stageStyle} className={moduleStyles.stage}>
+      {stage.map((row) => {
+        return row.map((cell, x) => {
+          return <Cell key={x} type={cell.type} />;
+        });
+      })}
+    </div>
   );
 };
 

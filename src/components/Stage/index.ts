@@ -1,2 +1,2 @@
-import Stage from "./Stage";
-export {Stage};
+import Stage from './Stage';
+export { Stage };

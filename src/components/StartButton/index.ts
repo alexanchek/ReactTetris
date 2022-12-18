@@ -1,2 +1,2 @@
-import StartButton from "./StartButton";
-export {StartButton};
+import StartButton from './StartButton';
+export { StartButton };

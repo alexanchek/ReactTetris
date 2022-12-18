@@ -3,13 +3,7 @@ import { createStage } from '@utils/gameHelpers';
 import { IPlayer } from '@interfaces/Player.interface';
 import { IStage } from '@interfaces/Stage.interface';
 
-export const useStage = ({
-  player,
-  setPlayer,
-}: {
-  player: IPlayer;
-  setPlayer: Dispatch<SetStateAction<IPlayer>>;
-}) => {
+export const useStage = ({ player, resetPlayer }: { player: IPlayer; resetPlayer: () => void }) => {
   const [stage, setStage] = useState(createStage());
 
   useEffect(() => {
@@ -31,11 +25,15 @@ export const useStage = ({
         });
       });
 
+      if (player.collided) {
+        resetPlayer();
+      }
+
       return newStage;
     };
 
     setStage((prev) => updateStage(prev));
-  }, [player]);
+  }, [player, resetPlayer]);
 
   return { stage, setStage };
 };
