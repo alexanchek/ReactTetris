@@ -6,5 +6,5 @@ export interface IPlayer {
     y: number;
   };
   tetromino: IShapeTetromino;
-  collided: boolean;
+  collided?: boolean;
 }

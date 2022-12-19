@@ -51,6 +51,7 @@ export const usePlayer = () => {
   };
 
   const updatePlayerPos = ({ x, y, collided }: { x: number; y: number; collided: boolean }) => {
+    console.log(collided);
     setPlayer({
       ...player,
       pos: { x: (player.pos.x += x), y: (player.pos.y += y) },
@@ -69,7 +70,6 @@ export const usePlayer = () => {
   return {
     updatePlayerPos,
     resetPlayer,
-    rotate,
     playerRotate,
     player,
   };

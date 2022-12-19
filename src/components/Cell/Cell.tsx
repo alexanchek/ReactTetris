@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from 'react';
+import { CSSProperties, FC, memo } from 'react';
 import { ICellProps } from './Cell.interface';
 import { TETROMINOS } from '@utils/tetrominos';
 
@@ -18,4 +18,4 @@ const Cell: FC<ICellProps> = ({ type }) => {
   return <div style={style} />;
 };
 
-export default Cell;
+export default memo(Cell);
