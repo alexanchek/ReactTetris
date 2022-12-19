@@ -6,6 +6,7 @@ import moduleStyles from './Tetris.module.scss';
 // Custom hooks
 import { usePlayer } from '@hooks/usePlayer';
 import { useStage } from '@hooks/useStage';
+import { useInterval } from '@hooks/useInterval';
 
 // Components
 import { Stage } from '../Stage';
@@ -14,7 +15,7 @@ import { StartButton } from '../StartButton';
 import { checkCollision, createStage } from '@utils/gameHelpers';
 
 const Tetris = () => {
-  const [dropTime, setDropTime] = useState(null);
+  const [dropTime, setDropTime] = useState<null | number>(null);
   const [gameOver, setGameOver] = useState(false);
 
   const { player, updatePlayerPos, resetPlayer, rotate, playerRotate } = usePlayer();
@@ -31,6 +32,7 @@ const Tetris = () => {
   const startGame = () => {
     // Reset evetything
     setStage(createStage());
+    setDropTime(1000);
     resetPlayer();
     setGameOver(false);
   };
@@ -49,7 +51,16 @@ const Tetris = () => {
     }
   };
 
+  const keyUp = ({ key }: KeyboardEvent) => {
+    if (!gameOver) {
+      if (key === 'ArrowDown') {
+        setDropTime(1000);
+      }
+    }
+  };
+
   const dropPlayer = () => {
+    setDropTime(null);
     drop();
   };
 
@@ -77,6 +88,11 @@ const Tetris = () => {
     background: `url(${bgImage}) #000`,
   };
 
+  useInterval({
+    callback: () => drop(),
+    delay: dropTime,
+  });
+
   return (
     <div
       className={moduleStyles.wrapper}
@@ -84,6 +100,7 @@ const Tetris = () => {
       role='button'
       tabIndex={0}
       onKeyDown={(e) => move(e)}
+      onKeyUp={keyUp}
     >
       <div className={moduleStyles.tetris}>
         <Stage stage={stage} />
