@@ -7,10 +7,6 @@ const Stage: FC<IStageProps> = ({ stage }) => {
   const width = stage[0].length;
   const height = stage.length;
 
-  useEffect(() => {
-    console.log('actual length', stage[0].length);
-  }, [stage]);
-
   const stageStyle: CSSProperties = {
     gridTemplateRows: `repeat(${height}, calc(25vw/${width}))`,
     gridTemplateColumns: `repeat(${width}, 1fr)`,

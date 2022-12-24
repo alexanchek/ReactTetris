@@ -12,7 +12,7 @@ import { useGameStatus } from '@hooks/useGameStatus';
 // Components
 import { Stage } from '../Stage';
 import { Display } from '../Display';
-import { StartButton } from '../StartButton';
+import { Button } from '../Button';
 import { checkCollision, createStage } from '@utils/gameHelpers';
 
 const Tetris = () => {
@@ -125,7 +125,7 @@ const Tetris = () => {
               <Display text={`Level: ${level}`} />
             </div>
           )}
-          <StartButton callback={startGame} />
+          <Button callback={startGame} title={'Start game'} />
         </aside>
       </div>
     </div>
