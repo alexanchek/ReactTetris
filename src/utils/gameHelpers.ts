@@ -31,13 +31,9 @@ export const checkCollision = ({
     for (let x = 0; x < player.tetromino[y].length; x += 1) {
       if (player.tetromino[y][x] !== 0) {
         if (
-          !stage[(y + player.pos.y + moveY) as keyof typeof TETROMINOS & '0'] ||
-          !stage[(y + player.pos.y + moveY) as keyof typeof TETROMINOS & '0'][
-            x + player.pos.x + moveX
-          ] ||
-          stage[(y + player.pos.y + moveY) as keyof typeof TETROMINOS & '0'][
-            x + player.pos.x + moveX
-          ].state !== 'clear'
+          !stage[(y + player.pos.y + moveY) as number] ||
+          !stage[(y + player.pos.y + moveY) as number][x + player.pos.x + moveX] ||
+          stage[(y + player.pos.y + moveY) as number][x + player.pos.x + moveX].state !== 'clear'
         ) {
           return true;
         }

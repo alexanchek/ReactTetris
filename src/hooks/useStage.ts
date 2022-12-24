@@ -44,7 +44,6 @@ export const useStage = ({ player, resetPlayer }: { player: IPlayer; resetPlayer
 
       if (player.collided) {
         resetPlayer();
-        console.log(sweepRows(newStage));
         return sweepRows(newStage);
       }
 
