@@ -17,6 +17,7 @@ import { checkCollision, createStage } from '@utils/gameHelpers';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState<null | number>(null);
+  const [pause, setPause] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
   const { player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer();
@@ -40,6 +41,11 @@ const Tetris = () => {
     setScore(0);
     setRows(0);
     setLevel(0);
+    setPause(false);
+  };
+
+  const pauseGame = () => {
+    setPause(!pause);
   };
 
   const drop = () => {
@@ -76,7 +82,19 @@ const Tetris = () => {
   };
 
   const move = ({ key }: KeyboardEvent) => {
+    if (key === 'n') {
+      startGame();
+    }
+
     if (!gameOver) {
+      if (key === 'p') {
+        pauseGame();
+      }
+
+      if (pause) {
+        return;
+      }
+
       if (key === 'ArrowLeft') {
         movePlayer(-1);
       }
@@ -102,6 +120,7 @@ const Tetris = () => {
   useInterval({
     callback: () => drop(),
     delay: dropTime,
+    pause,
   });
 
   return (
@@ -114,7 +133,7 @@ const Tetris = () => {
       onKeyUp={keyUp}
     >
       <div className={moduleStyles.tetris}>
-        <Stage stage={stage} />
+        <Stage stage={stage} pause={pause} />
         <aside className={moduleStyles.aside}>
           {gameOver ? (
             <Display gameOver={gameOver} text='Game Over' />
@@ -125,7 +144,10 @@ const Tetris = () => {
               <Display text={`Level: ${level}`} />
             </div>
           )}
-          <Button callback={startGame} title={'Start game'} />
+          <Button callback={startGame} title={'New game (N)'} />
+          {!gameOver && (
+            <Button callback={pauseGame} title={!pause ? 'Pause game (P)' : 'Continue (P)'} />
+          )}
         </aside>
       </div>
     </div>

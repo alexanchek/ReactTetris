@@ -5,7 +5,7 @@ import { TETROMINOS } from '@utils/tetrominos';
 const Cell: FC<ICellProps> = ({ type }) => {
   const color = TETROMINOS[type as keyof typeof TETROMINOS].color;
 
-  const style: CSSProperties = {
+  const cellStyle: CSSProperties = {
     width: 'auto',
     background: `rgba(${color}, 0.8)`,
     border: type === 0 ? '0px solid' : '4px solid',
@@ -15,7 +15,7 @@ const Cell: FC<ICellProps> = ({ type }) => {
     borderLeftColor: `rgba(${color},  0.3)`,
   };
 
-  return <div style={style} />;
+  return <div style={cellStyle} />;
 };
 
 export default memo(Cell);

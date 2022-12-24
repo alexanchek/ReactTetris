@@ -3,9 +3,10 @@ import { useEffect, useRef } from 'react';
 interface IIntervalHookProps {
   callback: () => void;
   delay: number | null;
+  pause: boolean;
 }
 
-export const useInterval = ({ callback, delay }: IIntervalHookProps) => {
+export const useInterval = ({ callback, delay, pause }: IIntervalHookProps) => {
   const savedCallback = useRef<any>();
   // Remember the latest callback.
   useEffect(() => {
@@ -17,11 +18,11 @@ export const useInterval = ({ callback, delay }: IIntervalHookProps) => {
     function tick() {
       savedCallback.current();
     }
-    if (delay !== null) {
+    if (delay !== null && !pause) {
       const id = setInterval(tick, delay);
       return () => {
         clearInterval(id);
       };
     }
-  }, [delay]);
+  }, [delay, pause]);
 };
