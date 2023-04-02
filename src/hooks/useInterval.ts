@@ -7,7 +7,7 @@ interface IIntervalHookProps {
 }
 
 export const useInterval = ({ callback, delay, pause }: IIntervalHookProps) => {
-  const savedCallback = useRef<any>();
+  const savedCallback = useRef<() => void>();
   // Remember the latest callback.
   useEffect(() => {
     savedCallback.current = callback;
@@ -16,7 +16,7 @@ export const useInterval = ({ callback, delay, pause }: IIntervalHookProps) => {
   // Set up the interval.
   useEffect(() => {
     function tick() {
-      savedCallback.current();
+      savedCallback.current!();
     }
     if (delay !== null && !pause) {
       const id = setInterval(tick, delay);
